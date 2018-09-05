@@ -15,6 +15,7 @@ namespace WhatSightWord
         public Form1()
         {
             InitializeComponent();
+            PaintEventHandler Form1_Paint = null;
             Paint += Form1_Paint;
             //Load += Form1_Load;
         }
@@ -65,7 +66,7 @@ namespace WhatSightWord
         
            
             
-        private void btn_click(object sender, EventArgs e)
+        /*private void Button1(object sender, EventArgs e)
         {
                     if (ignore)
                         return;
@@ -87,13 +88,16 @@ namespace WhatSightWord
                     ignore = labels.All(lbl => lbl.Text != " ") || stage == 10;
 
                     this.Invalidate();
-                }
+                }*/
             }
         
         }
 
-       
-            
+        private void btn_click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
