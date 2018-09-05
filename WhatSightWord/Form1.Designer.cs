@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlletters = new System.Windows.Forms.Panel();
             this.txtletter10 = new System.Windows.Forms.TextBox();
             this.txtletter9 = new System.Windows.Forms.TextBox();
@@ -42,21 +43,21 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lb1Input = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
             this.grpStatus = new System.Windows.Forms.GroupBox();
+            this.lbIGamesLost = new System.Windows.Forms.Label();
+            this.IblGamesWon = new System.Windows.Forms.Label();
+            this.IbIGusses = new System.Windows.Forms.Label();
+            this.IbINoMissed = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.lbINoMissed = new System.Windows.Forms.TextBox();
             this.IbIGuesses = new System.Windows.Forms.TextBox();
-            this.pbcIndexcardBmp = new System.Windows.Forms.PictureBox();
+            this.pbcWhatSightWordBmp = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.IbINoMissed = new System.Windows.Forms.Label();
-            this.IbIGusses = new System.Windows.Forms.Label();
-            this.IblGamesWon = new System.Windows.Forms.Label();
-            this.lbIGamesLost = new System.Windows.Forms.Label();
             this.pnlletters.SuspendLayout();
             this.grpStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcIndexcardBmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcWhatSightWordBmp)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlletters
@@ -133,7 +134,6 @@
             this.txtletter7.Size = new System.Drawing.Size(38, 73);
             this.txtletter7.TabIndex = 6;
             this.txtletter7.TabStop = false;
-            this.txtletter7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox6
             // 
@@ -228,7 +228,6 @@
             this.lb1Input.Size = new System.Drawing.Size(144, 18);
             this.lb1Input.TabIndex = 10;
             this.lb1Input.Text = "Enter A Letter Guess:";
-            this.lb1Input.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox11
             // 
@@ -238,17 +237,17 @@
             this.textBox11.Size = new System.Drawing.Size(92, 38);
             this.textBox11.TabIndex = 11;
             // 
-            // btnSubmit
+            // Button1
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSubmit.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.Gold;
-            this.btnSubmit.Location = new System.Drawing.Point(278, 123);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(106, 51);
-            this.btnSubmit.TabIndex = 12;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.Button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button1.ForeColor = System.Drawing.Color.Gold;
+            this.Button1.Location = new System.Drawing.Point(278, 123);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(106, 51);
+            this.Button1.TabIndex = 12;
+            this.Button1.Text = "Submit";
+            this.Button1.UseVisualStyleBackColor = false;
             // 
             // grpStatus
             // 
@@ -266,6 +265,50 @@
             this.grpStatus.TabIndex = 13;
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Game status:";
+            // 
+            // lbIGamesLost
+            // 
+            this.lbIGamesLost.AutoSize = true;
+            this.lbIGamesLost.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIGamesLost.ForeColor = System.Drawing.Color.Gray;
+            this.lbIGamesLost.Location = new System.Drawing.Point(368, 73);
+            this.lbIGamesLost.Name = "lbIGamesLost";
+            this.lbIGamesLost.Size = new System.Drawing.Size(143, 13);
+            this.lbIGamesLost.TabIndex = 11;
+            this.lbIGamesLost.Text = "Number of Games Lost: ";
+            // 
+            // IblGamesWon
+            // 
+            this.IblGamesWon.AutoSize = true;
+            this.IblGamesWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IblGamesWon.ForeColor = System.Drawing.Color.Green;
+            this.IblGamesWon.Location = new System.Drawing.Point(366, 31);
+            this.IblGamesWon.Name = "IblGamesWon";
+            this.IblGamesWon.Size = new System.Drawing.Size(145, 13);
+            this.IblGamesWon.TabIndex = 10;
+            this.IblGamesWon.Text = "Number of Games Won: ";
+            // 
+            // IbIGusses
+            // 
+            this.IbIGusses.AutoSize = true;
+            this.IbIGusses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IbIGusses.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.IbIGusses.Location = new System.Drawing.Point(18, 73);
+            this.IbIGusses.Name = "IbIGusses";
+            this.IbIGusses.Size = new System.Drawing.Size(99, 13);
+            this.IbIGusses.TabIndex = 9;
+            this.IbIGusses.Text = "Letters Guessed";
+            // 
+            // IbINoMissed
+            // 
+            this.IbINoMissed.AutoSize = true;
+            this.IbINoMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IbINoMissed.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.IbINoMissed.Location = new System.Drawing.Point(8, 28);
+            this.IbINoMissed.Name = "IbINoMissed";
+            this.IbINoMissed.Size = new System.Drawing.Size(107, 13);
+            this.IbINoMissed.TabIndex = 8;
+            this.IbINoMissed.Text = "Number of Misses";
             // 
             // textBox15
             // 
@@ -296,65 +339,28 @@
             this.IbIGuesses.Size = new System.Drawing.Size(218, 20);
             this.IbIGuesses.TabIndex = 4;
             // 
-            // pbcIndexcardBmp
+            // pbcWhatSightWordBmp
             // 
-            this.pbcIndexcardBmp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbcIndexcardBmp.Location = new System.Drawing.Point(470, 13);
-            this.pbcIndexcardBmp.Name = "pbcIndexcardBmp";
-            this.pbcIndexcardBmp.Size = new System.Drawing.Size(148, 173);
-            this.pbcIndexcardBmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbcIndexcardBmp.TabIndex = 14;
-            this.pbcIndexcardBmp.TabStop = false;
+            this.pbcWhatSightWordBmp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbcWhatSightWordBmp.Location = new System.Drawing.Point(470, 13);
+            this.pbcWhatSightWordBmp.Name = "pbcWhatSightWordBmp";
+            this.pbcWhatSightWordBmp.Size = new System.Drawing.Size(152, 175);
+            this.pbcWhatSightWordBmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcWhatSightWordBmp.TabIndex = 14;
+            this.pbcWhatSightWordBmp.TabStop = false;
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(80, 80);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // IbINoMissed
-            // 
-            this.IbINoMissed.AutoSize = true;
-            this.IbINoMissed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IbINoMissed.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.IbINoMissed.Location = new System.Drawing.Point(8, 28);
-            this.IbINoMissed.Name = "IbINoMissed";
-            this.IbINoMissed.Size = new System.Drawing.Size(107, 13);
-            this.IbINoMissed.TabIndex = 8;
-            this.IbINoMissed.Text = "Number of Misses";
-            // 
-            // IbIGusses
-            // 
-            this.IbIGusses.AutoSize = true;
-            this.IbIGusses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IbIGusses.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.IbIGusses.Location = new System.Drawing.Point(18, 73);
-            this.IbIGusses.Name = "IbIGusses";
-            this.IbIGusses.Size = new System.Drawing.Size(99, 13);
-            this.IbIGusses.TabIndex = 9;
-            this.IbIGusses.Text = "Letters Guessed";
-            // 
-            // IblGamesWon
-            // 
-            this.IblGamesWon.AutoSize = true;
-            this.IblGamesWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblGamesWon.ForeColor = System.Drawing.Color.Green;
-            this.IblGamesWon.Location = new System.Drawing.Point(366, 31);
-            this.IblGamesWon.Name = "IblGamesWon";
-            this.IblGamesWon.Size = new System.Drawing.Size(145, 13);
-            this.IblGamesWon.TabIndex = 10;
-            this.IblGamesWon.Text = "Number of Games Won: ";
-            // 
-            // lbIGamesLost
-            // 
-            this.lbIGamesLost.AutoSize = true;
-            this.lbIGamesLost.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIGamesLost.ForeColor = System.Drawing.Color.Gray;
-            this.lbIGamesLost.Location = new System.Drawing.Point(368, 73);
-            this.lbIGamesLost.Name = "lbIGamesLost";
-            this.lbIGamesLost.Size = new System.Drawing.Size(143, 13);
-            this.lbIGamesLost.TabIndex = 11;
-            this.lbIGamesLost.Text = "Number of Games Lost: ";
+            this.imageList1.Images.SetKeyName(0, "letterG.png");
+            this.imageList1.Images.SetKeyName(1, "letterO1.png");
+            this.imageList1.Images.SetKeyName(2, "letterO2.png");
+            this.imageList1.Images.SetKeyName(3, "letterD.png");
+            this.imageList1.Images.SetKeyName(4, "letterJ.png");
+            this.imageList1.Images.SetKeyName(5, "letterO3.png");
+            this.imageList1.Images.SetKeyName(6, "letterB.png");
+            this.imageList1.Images.SetKeyName(7, "Goodjobthumbs.jpg");
             // 
             // Form1
             // 
@@ -363,8 +369,8 @@
             this.ClientSize = new System.Drawing.Size(634, 401);
             this.Controls.Add(this.lb1Input);
             this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.pbcIndexcardBmp);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.pbcWhatSightWordBmp);
             this.Controls.Add(this.pnlletters);
             this.Controls.Add(this.grpStatus);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -380,7 +386,7 @@
             this.pnlletters.PerformLayout();
             this.grpStatus.ResumeLayout(false);
             this.grpStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcIndexcardBmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcWhatSightWordBmp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +400,7 @@
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox lbINoMissed;
         private System.Windows.Forms.TextBox IbIGuesses;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label lb1Input;
         private System.Windows.Forms.TextBox txtletter10;
@@ -407,7 +413,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pbcIndexcardBmp;
+        private System.Windows.Forms.PictureBox pbcWhatSightWordBmp;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label IbINoMissed;
         private System.Windows.Forms.Label IbIGusses;
